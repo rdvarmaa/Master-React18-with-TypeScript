@@ -1,9 +1,12 @@
-import Message from "./Message";
+import ListGroup from "./components/ListGroup";
+
 
 function App() {
   return (
     <div className="App">
-      <Message />
+      <h1>My React App</h1>
+      {/* This is where the ListGroup component is rendered */}
+      <ListGroup />
       {/* This is where the Message component is rendered */}
     </div>
   );
