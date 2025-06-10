@@ -1,6 +1,11 @@
 
 function Message(){
-    return <div>Hello, World!</div>;
+    const message = "Hello, World!";
+    // This is a simple message variable that holds the text to be displayed
+    if (!message) {
+        return <div className="message">No message available</div>; 
+    }
+    return <div>{ message }</div>;
 }
 
 export default Message;
