@@ -1,18 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Message from "./Message";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>        
-        <span>Deepa Varma R</span>
-      </div>
-    </>
-  )
+    <div className="App">
+      <Message />
+      {/* This is where the Message component is rendered */}
+    </div>
+  );
 }
-
-export default App
+export default App;
+// This code defines a React component named App that renders a div with the class "App" and includes the Message component.
+      
