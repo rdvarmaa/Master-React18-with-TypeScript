@@ -1,11 +1,10 @@
 function ListGroup() {
   return (
+    // Fragment syntax is used to return multiple elements without adding extra nodes to the DOM
     <>
-      {" "}
-      // This is a React component that renders a list group using Bootstrap
-      classes - fragment syntax
       <h1>List Group</h1>
       <ul className="list-group">
+        {/*  This is a React component that renders a list group using Bootstrap classes */}
         <li className="list-group-item">An item</li>
         <li className="list-group-item">A second item</li>
         <li className="list-group-item">A third item</li>
