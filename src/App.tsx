@@ -6,7 +6,30 @@ function App() {
     <div className="App">
       <h1>My React App</h1>
       {/* This is where the ListGroup component is rendered */}
-      <ListGroup />
+      <ListGroup
+        items={[
+          "Kerala",
+          "Tamilnadu",
+          "Karnataka",
+          "Thelankana",
+          "Andhra Pradesh",
+          "Maharashtra",
+        ]}
+        title="States in India"
+      />
+
+      <ListGroup
+        items={[
+          "Balochistan",
+          "Punjab",
+          "Sindh",
+          "Lahore",
+          "Rawalpindi",
+          "Islamabad",
+        ]}
+        title="States in Pakistan"
+      />
+
       <ListGroupWithHook />
       {/* This is where the Message component is rendered */}
     </div>
