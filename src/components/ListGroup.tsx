@@ -1,3 +1,5 @@
+import type { MouseEvent } from "react";
+
 function ListGroup() {
   let items = [
     "Kerala",
@@ -7,6 +9,10 @@ function ListGroup() {
     "Andhra Pradesh",
     "Maharashtra",
   ];
+
+  const handleClick = (event: MouseEvent) => {
+    console.log(event);
+  };
 
   //items = []; // This line clears the items array, making it empty
   // This is an array of items that will be displayed in the list group
@@ -29,7 +35,7 @@ function ListGroup() {
         <li className="list-group-item">And a fifth one</li>
         */}
         {items.map((item, index) => (
-          <li className="list-group-item" key={index}>
+          <li className="list-group-item" onClick={handleClick} key={index}>
             {item}
           </li>
         ))}
@@ -44,3 +50,5 @@ export default ListGroup;
 // The list items are generated dynamically from an array of items using the map function.
 // Each list item is assigned a unique key based on its index in the array to help React identify which items have changed, are added, or are removed.
 // The component also includes a conditional rendering statement that displays a warning message if the items array is empty.
+// The handleClick function is defined to log the event when a list item is clicked, but it does not perform any other actions.
+// The component is exported as the default export of the module, allowing it to be imported and used in other parts of the application.
