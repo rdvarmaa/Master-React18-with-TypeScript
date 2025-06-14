@@ -6,38 +6,19 @@ interface ListGroupProps {
   title?: string; // Optional prop for title
 }
 
-function ListGroup(props: ListGroupProps) {
-  const items = props.items || [
-    "An item",
-    "A second item",
-    "A third item",
-    "A fourth item",
-    "And a fifth one",
-  ];
-  const title = props.title || "List Group"; // Default title if not provided
-
+function ListGroup({ items = [], title = "List Group" }: ListGroupProps) {
   const handleClick = (event: MouseEvent) => {
     console.log(event);
   };
 
   return (
-    // Fragment syntax is used to return multiple elements without adding extra nodes to the DOM
     <>
       <h1>{title}</h1>
 
       {items.length === 0 && (
         <div className="alert alert-warning">No items found</div>
       )}
-      {/* This is a heading for the list group */}
       <ul className="list-group">
-        {/*  This is a React component that renders a list group using Bootstrap classes */}
-        {/*
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">A second item</li>
-        <li className="list-group-item">A third item</li>
-        <li className="list-group-item">A fourth item</li>
-        <li className="list-group-item">And a fifth one</li>
-        */}
         {items.map((item, index) => (
           <li className="list-group-item" onClick={handleClick} key={index}>
             {item}
