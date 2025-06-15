@@ -1,16 +1,18 @@
-import type { MouseEvent } from "react";
-
 interface ListGroupProps {
   // Define any props that ListGroup might need
   items?: string[]; // Optional prop to pass items
   title?: string; // Optional prop for title
+  onSelectItem?: (item: string) => void; // Optional callback for item selection
 }
 
-function ListGroup({ items = [], title = "List Group" }: ListGroupProps) {
-  const handleClick = (event: MouseEvent) => {
-    console.log(event);
-  };
-
+const defaultOnSelectItem = (item: string) => {
+  console.log("item selected:", item);
+};
+function ListGroup({
+  items = [],
+  title = "List Group",
+  onSelectItem = defaultOnSelectItem,
+}: ListGroupProps) {
   return (
     <>
       <h1>{title}</h1>
@@ -20,8 +22,12 @@ function ListGroup({ items = [], title = "List Group" }: ListGroupProps) {
       )}
       <ul className="list-group">
         {items.map((item, index) => (
-          <li className="list-group-item" onClick={handleClick} key={index}>
-            {item}
+          <li
+            className="list-group-item"
+            onClick={() => onSelectItem(item)}
+            key={index}
+          >
+            <a className="a">{item}</a>
           </li>
         ))}
       </ul>
@@ -38,3 +44,5 @@ export default ListGroup;
 // The handleClick function is defined to log the event when a list item is clicked, but it does not perform any other actions.
 // The component is exported as the default export of the module, allowing it to be imported and used in other parts of the application.
 // The component accepts props for items and title, with default values if not provided.
+// The onSelectItem prop is a callback function that is called when an item is clicked, allowing for custom behavior when an item is selected.
+// The component uses TypeScript for type checking, ensuring that the props passed to the component are of the expected types.

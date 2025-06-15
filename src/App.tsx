@@ -16,6 +16,7 @@ function App() {
           "Maharashtra",
         ]}
         title="States in India"
+        onSelectItem={(item: string) => console.log("Selected item:", item)}
       />
 
       <ListGroup
@@ -28,6 +29,7 @@ function App() {
           "Islamabad",
         ]}
         title="States in Pakistan"
+        onSelectItem={(item: string) => console.log("Selected state:", item)}
       />
 
       <ListGroupWithHook />
